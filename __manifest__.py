@@ -28,7 +28,7 @@
         'views/ph_localization_views.xml',
         'views/menuitem_views.xml',
         'views/res_partner_views.xml',
-
+        'data/data.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
