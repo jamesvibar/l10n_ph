@@ -20,7 +20,7 @@
     'version': '0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'mail', 'contacts'],
+    'depends': ['base', 'mail', 'contacts', 'website', 'website_form'],
 
     # always loaded
     'data': [

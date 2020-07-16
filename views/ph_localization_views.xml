@@ -41,6 +41,30 @@
             <field name="help">If you are working on the American market, you can manage the different federal states you are working on from here. Each state is attached to one country.</field>
         </record>
 
+        <!-- Province Views -->
+        <record id="res_country_state_l10n_ph_tree" model="ir.ui.view">
+            <field name="name">res.country.state.l10n_ph.tree</field>
+            <field name="model">res.country.state</field>
+            <field name="inherit_id" ref="base.view_country_state_tree"/>
+            <field name="arch" type="xml">
+              <xpath expr="//field[last()]" position="after">
+                  <field name="active"/>
+              </xpath>
+            </field>
+        </record>
+
+        <!-- Province Views -->
+        <record id="res_country_state_l10n_ph_form" model="ir.ui.view">
+            <field name="name">res.country.state.l10n_ph.form</field>
+            <field name="model">res.country.state</field>
+            <field name="inherit_id" ref="base.view_country_state_form"/>
+            <field name="arch" type="xml">
+              <xpath expr="//field[last()]" position="after">
+                  <field name="active"/>
+              </xpath>
+            </field>
+        </record>
+
 <!--State City Views      -->
         <record id="res_state_city_search" model="ir.ui.view">
             <field name="name">res.state.city.search</field>
