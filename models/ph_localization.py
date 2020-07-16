@@ -8,7 +8,7 @@ class CountryState(models.Model):
     city_ids = fields.One2many(
         'res.state.city', 'state_id', string="City/Municipality")
     country_code = fields.Char(related='country_id.code', store=True)
-    active = fields.Boolean(string="Active")
+    active = fields.Boolean(string="Active", default=False)
 
 
 class StateCity(models.Model):
