@@ -28,14 +28,14 @@ class StateCity(models.Model):
     @api.model
     def create(self, vals):
         if vals['name']:
-            vals['name'] = vals['name'].title()
+            vals['name'] = vals['name']
 
         return super(StateCity, self).create(vals)
 
     def write(self, vals):
         if 'name' in vals:
             if vals['name']:
-                vals['name'] = vals['name'].title()
+                vals['name'] = vals['name']
         return super(StateCity, self).write(vals)
 
 
@@ -56,11 +56,11 @@ class CityBarangay(models.Model):
     @api.model
     def create(self, vals):
         if vals['name']:
-            vals['name'] = vals['name'].title()
+            vals['name'] = vals['name']
         return super(CityBarangay, self).create(vals)
 
     def write(self, vals):
         if 'name' in vals:
             if vals['name']:
-                vals['name'] = vals['name'].title()
+                vals['name'] = vals['name']
         return super(CityBarangay, self).write(vals)
