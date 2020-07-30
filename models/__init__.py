@@ -3,3 +3,4 @@
 # from . import models
 from . import ph_localization
 from . import res_partner
+# from . import res_company

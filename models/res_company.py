@@ -1,8 +1,8 @@
 from odoo import fields, models, api, tools
 
 
-class ResPartner(models.Model):
-    _inherit = 'res.partner'
+class ResCompany(models.Model):
+    _inherit = 'res.company'
 
     city_id = fields.Many2one(
         'res.state.city', string="City", domain="[('state_id','=',state_id)]")
@@ -17,16 +17,12 @@ class ResPartner(models.Model):
 
     @api.model
     def create(self, values):
-        result = super(ResPartner, self).create(values)
+        result = super(ResCompany, self).create(values)
 
-        if ("city_id" in values):
-            city = self.env['res.state.city'].browse(values['city_id'])
-            result['city'] = city.name
-
-        if ("barangay_id" in values):
-            barangay = self.env['res.city.barangay'].browse(
-                values['barangay_id'])
-            result['street2'] = barangay.name
+        city = self.env['res.state.city'].browse(values['city_id'])
+        result['city'] = city.name
+        barangay = self.env['res.city.barangay'].browse(values['barangay_id'])
+        result['street2'] = barangay.name
 
         return result
 
@@ -35,4 +31,4 @@ class ResPartner(models.Model):
             barangay = self.env['res.city.barangay'].browse(
                 values['barangay_id'])
             values['street2'] = barangay.name
-        return super(ResPartner, self).write(values)
+        return super(ResCompany, self).write(values)
